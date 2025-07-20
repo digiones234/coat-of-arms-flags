@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coat of Arms and Flags World</title>
+  <style>
+    :root {
+      --bg-color: #e6f0ff;
+      --text-color: #001f3f;
+      --card-bg: white;
+      --header-bg: #001f3f;
+      --header-text: white;
+    }
+
+    body.dark-mode {
+      --bg-color: #0b0b0b;
+      --text-color: #f0f0f0;
+      --card-bg: #1e1e1e;
+      --header-bg: #222;
+      --header-text: #f0f0f0;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Georgia", serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+    }
+    header, footer {
+      background-color: var(--header-bg);
+      color: var(--header-text);
+      text-align: center;
+      padding: 1rem;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    nav a {
+      color: var(--header-text);
+      margin: 0 1rem;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .toggle-mode {
+      margin-top: 1rem;
+      background: none;
+      border: 2px solid var(--header-text);
+      color: var(--header-text);
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+    .toggle-mode:hover {
+      background-color: var(--header-text);
+      color: var(--header-bg);
+    }
+    main {
+      padding: 2rem;
+      animation: fadeIn 1s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .gallery-item {
+      border: 1px solid #aac;
+      padding: 1rem;
+      background-color: var(--card-bg);
+      text-align: center;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+    .gallery-item img {
+      max-width: 100%;
+      height: auto;
+    }
+    section {
+      margin-bottom: 3rem;
+      animation: fadeInUp 0.8s ease-out;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Coat of Arms and Flags World</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About</a>
+    </nav>
+    <button class="toggle-mode" onclick="toggleMode()">Switch Theme</button>
+  </header>
+
+  <main>
+    <section id="home">
+      <h2>Welcome to Coat of Arms and Flags World</h2>
+      <p>Explore a world of flags and coats of arms from different nations, families, and eras. Whether you're a historian, a vexillology enthusiast, or just curious, this is your space to discover and learn.</p>
+    </section>
+
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="images/power.png" alt="Power Coat of Arms">
+          <p>Power Coat of Arms</p>
+        </div>
+        <div class="gallery-item">
+          <img src="images/tribe.png" alt="Tribe Coat of Arms">
+          <p>Tribal Coat of Arms</p>
+        </div>
+        <div class="gallery-item">
+          <img src="images/holy roman empire coat of arms.png" alt="Holy Roman Empire">
+          <p>Holy Roman Empire Coat of Arms</p>
+        </div>
+        <div class="gallery-item">
+          <img src="images/Imperial germany coat of arms.png" alt="Imperial Germany">
+          <p>Imperial Germany Coat of Arms</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About Coat of Arms and Flags World</h2>
+      <p>Coat of Arms and Flags World is dedicated to showcasing historical and modern coats of arms and flags from around the globe. This project aims to educate, inspire, and spark interest in heraldry and vexillology.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Coat of Arms and Flags World. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+</body>
+</html>
